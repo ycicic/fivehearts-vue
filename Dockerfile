@@ -1,5 +1,5 @@
 FROM nginx
-ENV TAG_VERSION=0.0.1
+ENV TAG_VERSION=0.0.2
 COPY dist/ /usr/share/nginx/html/
 COPY nginx/nginx.conf /etc/nginx/nginx.conf
 
