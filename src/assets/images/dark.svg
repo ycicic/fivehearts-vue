@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="52px" height="45px" viewBox="0 0 52 45" version="1.1" 
-    xmlns="http://www.w3.org/2000/svg" 
+<svg width="52px" height="45px" viewBox="0 0 52 45" version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink">
     <defs>
         <filter x="-9.4%" y="-6.2%" width="118.8%" height="122.5%" filterUnits="objectBoundingBox" id="filter-1">
@@ -31,7 +31,8 @@
                         <use fill="#F0F2F5" fill-rule="evenodd" xlink:href="#path-2"></use>
                     </g>
                     <rect id="Rectangle-11" fill="#FFFFFF" mask="url(#mask-3)" x="0" y="0" width="48" height="10"></rect>
-                    <rect id="Rectangle-18" fill="#303648" mask="url(#mask-3)" x="0" y="0" width="16" height="40"></rect>
+<!--                    <rect id="Rectangle-18" fill="#303648" mask="url(#mask-3)" x="0" y="0" width="16" height="40"></rect>-->
+                    <rect id="Rectangle-18" fill="#684345" mask="url(#mask-3)" x="0" y="0" width="16" height="40"></rect>
                 </g>
             </g>
         </g>

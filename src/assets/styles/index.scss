@@ -4,7 +4,7 @@
 @import './element-ui.scss';
 @import './sidebar.scss';
 @import './btn.scss';
-@import './ruoyi.scss';
+@import 'fivehearts';
 
 body {
   height: 100%;
@@ -165,11 +165,11 @@ aside {
 
 .link-type,
 .link-type:focus {
-  color: #337ab7;
+  color: #EAA4A4;
   cursor: pointer;
 
   &:hover {
-    color: rgb(32, 160, 255);
+    color: #FBB8AC;
   }
 }
 
