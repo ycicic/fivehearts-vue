@@ -82,8 +82,8 @@
       <el-table-column label="名称" align="center" prop="name"/>
       <el-table-column label="资源详情" align="center">
         <template #default="scope">
-          <div v-if="scope.row.type === 1" style="max-height: 6rem;" >
-            <el-image :fit="contain" slot="reference" :src="scope.row.info" :alt="scope.row.info" :preview-src-list="imageList" :append-to-body='true'/>
+          <div v-if="scope.row.type === 1">
+            <image-preview :src="scope.row.info" style="max-height: 6rem;"/>
           </div>
           <div v-else>
             <span>{{ scope.row.info }}</span>
@@ -136,7 +136,8 @@
           <el-input v-model="form.name" placeholder="请输入名称"/>
         </el-form-item>
         <el-form-item label="资源详情" prop="info">
-          <el-input v-model="form.info" type="textarea" placeholder="请输入内容"/>
+          <image-upload v-if="form.type === 1" v-model="form.info" :fileSize="50"/>
+          <el-input v-else v-model="form.info" type="textarea" placeholder="请输入内容"/>
         </el-form-item>
         <el-form-item label="备注" prop="remark">
           <el-input v-model="form.remark" type="textarea" placeholder="请输入内容"/>
@@ -191,11 +192,14 @@ function getList() {
   loading.value = true;
   listResources(queryParams.value).then(response => {
     resourcesList.value = response.data.records;
-    imageList.value = response.data.records.map((d)=>{
+    let srcList = [];
+    response.data.records.forEach((d) => {
       if (d.type === 1) {
-        return d.info;
+        let real_src_list = d.info.split(",");
+        real_src_list.forEach((src) => srcList.push(src));
       }
     });
+    imageList.value = srcList;
     total.value = response.data.total;
     loading.value = false;
   });
